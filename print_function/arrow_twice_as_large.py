@@ -1,0 +1,28 @@
+# The following starter code is given:
+# print("    *")
+# print("   * *")
+# print("  *   *")
+# print(" *     *")
+# print("***   ***")
+# print("  *   *")
+# print("  *   *")
+# print("  *****")
+
+# Make the arrow twice as large, but keep the same proportions
+# print(" "*4,"*"*1, sep="")
+# print(" "*3,"*"*1," "*1,"*"*1, sep="")
+# print(" "*2,"*"*1," "*3,"*"*1, sep="")
+# print(" "*1,"*"*1," "*5,"*"*1, sep="")
+# print("*"*3," "*3,"*"*3, sep="")
+# print(" "*2,"*"*1," "*3,"*"*1, sep="")
+# print(" "*2,"*"*1," "*3,"*"*1, sep="")
+# print(" "*2,"*"*5, sep="")
+
+print(" "*8,"*"*2, sep="",end="\n\n")
+print(" "*6,"*"*2," "*2,"*"*2, sep="",end="\n\n")
+print(" "*4,"*"*2," "*6,"*"*2, sep="",end="\n\n")
+print(" "*2,"*"*2," "*10,"*"*2, sep="",end="\n\n")
+print("*"*6," "*6,"*"*6, sep="",end="\n\n")
+print(" "*4,"*"*2," "*6,"*"*2, sep="",end="\n\n")
+print(" "*4,"*"*2," "*6,"*"*2, sep="",end="\n\n")
+print(" "*4,"*"*10, sep="",end="\n\n")
