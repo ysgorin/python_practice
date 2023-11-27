@@ -45,11 +45,17 @@ time.sleep(1)
 # members of the band to the list: Stu Sutcliffe,
 # and Pete Best;
 # step 3
-user_input = [input('Type \'Stu Sutcliffe\' to add him to the band. '), input('Type \'Pete Best\' to add him to the band. ')]
-for input in user_input:
-    beatles.append(input)
+
+for i in range(2):
+    beatles.append(input('Add a new member to the band: '))
 print("Step 3:", beatles)
 time.sleep(1)
+
+# user_input = [input('Type \'Stu Sutcliffe\' to add him to the band. '), input('Type \'Pete Best\' to add him to the band. ')]
+# for input in user_input:
+#     beatles.append(input)
+# print("Step 3:", beatles)
+# time.sleep(1)
 
 # step 4: use the del instruction to remove Stu
 # Sutcliffe and Pete Best from the list;
