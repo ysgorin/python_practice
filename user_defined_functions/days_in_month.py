@@ -19,6 +19,7 @@ def is_year_leap(year):
 # Function to determine days in a month/year pair
 def days_in_month(year, month):
     month_lengths = {1: 31,
+                     2: 28,
                      3: 31,
                      4: 30,
                      5: 31,
@@ -29,9 +30,7 @@ def days_in_month(year, month):
                      10: 31,
                      11: 30,
                      12: 31}
-    if month == 2 and is_year_leap(year) == False:
-        month_lengths[2] = 28
-    elif month == 2 and is_year_leap(year) == True:
+    if month == 2 and is_year_leap(year) == True:
         month_lengths[2] = 29
     return month_lengths[month]
 

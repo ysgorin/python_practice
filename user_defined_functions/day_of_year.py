@@ -13,9 +13,10 @@ def is_year_leap(year):
         return False
     else:
         return True
-    
-def days_in_month(year, month):
+
+def day_of_year(year, month, day):
     month_lengths = {1: 31,
+                     2: 28,
                      3: 31,
                      4: 30,
                      5: 31,
@@ -26,14 +27,10 @@ def days_in_month(year, month):
                      10: 31,
                      11: 30,
                      12: 31}
-    if month == 2 and is_year_leap(year) == False:
-        return 28
-    elif month == 2 and is_year_leap(year) == True:
-        return 29
-    else:
-        return month_lengths[month]
-
-def day_of_year(year, month, day):
-    year
-
-print(day_of_year(2000, 12, 31))
+    if is_year_leap(year) == True:
+        month_lengths[2] = 29
+    days = 0
+    for i in range(1,month):
+        days += month_lengths[i]
+    days += day
+    return days
