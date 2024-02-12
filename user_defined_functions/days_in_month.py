@@ -30,11 +30,10 @@ def days_in_month(year, month):
                      11: 30,
                      12: 31}
     if month == 2 and is_year_leap(year) == False:
-        return 28
+        month_lengths[2] = 28
     elif month == 2 and is_year_leap(year) == True:
-        return 29
-    else:
-        return month_lengths[month]
+        month_lengths[2] = 29
+    return month_lengths[month]
 
 # Testing code
 test_years = [1900, 2000, 2016, 1987]
