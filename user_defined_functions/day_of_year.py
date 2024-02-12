@@ -30,7 +30,12 @@ def day_of_year(year, month, day):
     if is_year_leap(year) == True:
         month_lengths[2] = 29
     days = 0
-    for i in range(1,month):
-        days += month_lengths[i]
-    days += day
-    return days
+    if month not in month_lengths or month_lengths[month] < day:
+        return None
+    else:
+        for i in range(1,month):
+            days += month_lengths[i]
+        days += day
+        return days
+    
+print(day_of_year(2000,11,30))
