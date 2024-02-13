@@ -1,0 +1,21 @@
+# 1 American mile = 1609.344 metres
+# 1 American gallon = 3.785411784 litres
+
+# def liters_100km_to_miles_gallon(liters):
+#
+# Write your code here.
+#
+
+def miles_gallon_to_liters_100km(miles):
+    mpg = miles
+    kmpg = miles * 1.609344
+    kmpl = kmpg / 3.785411784
+    lpkm = 1 / kmpl
+    return (lpkm * 100)
+
+# print(liters_100km_to_miles_gallon(3.9))
+# print(liters_100km_to_miles_gallon(7.5))
+# print(liters_100km_to_miles_gallon(10.))
+print(miles_gallon_to_liters_100km(60.3))
+print(miles_gallon_to_liters_100km(31.4))
+print(miles_gallon_to_liters_100km(23.5))
