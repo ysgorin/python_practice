@@ -1,4 +1,6 @@
 def display_board(board):
+    # The function accepts one parameter containing the board's current status
+    # and prints it out to the console.
     print("+-------+-------+-------+\n\
 |       |       |       |\n\
 |  ",board[0][0],"  |  ",board[0][1],"  |  ",board[0][2],"  |\n\
