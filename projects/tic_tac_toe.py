@@ -1,21 +1,21 @@
-print("""+-------+-------+-------+
-|       |       |       |
-|   1   |   2   |   3   |
-|       |       |       |
-+-------+-------+-------+
-|       |       |       |
-|   4   |   X   |   6   |
-|       |       |       |
-+-------+-------+-------+
-|       |       |       |
-|   7   |   8   |   9   |
-|       |       |       |
-+-------+-------+-------+""")
+def display_board(board):
+    print("+-------+-------+-------+\n\
+|       |       |       |\n\
+|  ",board[0][0],"  |  ",board[0][1],"  |  ",board[0][2],"  |\n\
+|       |       |       |\n\
++-------+-------+-------+\n\
+|       |       |       |\n\
+|  ",board[1][0],"  |  ",board[1][1],"  |  ",board[1][2],"  |\n\
+|       |       |       |\n\
++-------+-------+-------+\n\
+|       |       |       |\n\
+|  ",board[2][0],"  |  ",board[2][1],"  |  ",board[2][2],"  |\n\
+|       |       |       |\n\
++-------+-------+-------+")
 
-# def display_board(board):
-    # The function accepts one parameter containing the board's current status
-    # and prints it out to the console.
+board = [[1,2,3],[4,"X",6],[7,8,9]]
 
+display_board(board)
 
 # def enter_move(board):
     # The function accepts the board's current status, asks the user about their move, 
