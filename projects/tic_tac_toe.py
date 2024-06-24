@@ -19,15 +19,14 @@ def make_list_of_free_fields(board):
 #     The function browses the board and builds a list of all the free squares; 
 #     the list consists of tuples, while each tuple is a pair of row and column numbers.
     free_fields = []
+    row_number = 1
     for row in board:
+        column_number = 1
         for column in row:
             if type(column) == int:
-                if column in [1,2,3]:
-                    free_fields.append((1,column))
-                elif column in [4,5,6]:
-                    free_fields.append((2,column))
-                elif column in [7,8,9]:
-                    free_fields.append((3,column))
+                free_fields.append((row_number, column_number))
+            column_number += 1
+        row_number += 1
     return free_fields
 
 # def enter_move(board):
