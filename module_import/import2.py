@@ -1,5 +1,6 @@
 import math
 
+# This code's pi is not affected by math's pi.
 pi = 3.14
 x = pi
 
