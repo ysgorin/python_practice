@@ -2,5 +2,6 @@
 from sys import path
 path.append('..\\packages')
 
-from extra.iota import funI
-print(funI())
+# import FunI() from iota nested in extra package
+import extra.iota
+print(extra.iota.FunI())
