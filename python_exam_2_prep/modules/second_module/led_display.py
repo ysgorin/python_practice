@@ -1,8 +1,4 @@
-# Every digit is five lines of three characters.
-# The middle character on the second and fourth lines
-# is always a space.
-# So, I think a nested list is in order here.
-# Also there should be a space between each digit.
+# LED Display
 
 led_dict = {'0':['###',
                  '# #',
@@ -59,13 +55,21 @@ led_dict = {'0':['###',
 prompt = False
 while prompt == False:
     output = input('What non-negative integer number should the LED display show? ')
+    # Only accept non-negative numbers
     if output.isdigit():
         break
+    else:
+        print('You must type a non-negative integer.')
 
+# Process each line
 for row in range(5):
+    # Process each digit
     for i in range(len(output)):
+        # use end='' to stay on the same line
         print(led_dict[output[i]][row], end='')
+        # if it is not the last digit, add a space to separate between digits
         if i+1 != range(len(output)):
             print(' ', end='')
+    # if it is not the fifth row, go to the next line
     if row != 4:
         print()
