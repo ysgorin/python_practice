@@ -20,3 +20,15 @@ for char in text:
     cipher += chr(code)
 
 print('Cryptogram: ' + cipher)
+
+message = ''
+for char in cipher:
+    if not char.isalpha():
+        message += ' '
+        continue
+    code = ord(char) - 1
+    if code < ord('A'):
+        code = ord('Z')
+    message += chr(code)
+
+print('Encrypted Message: ' + message)
