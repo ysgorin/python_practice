@@ -6,7 +6,7 @@ total = 0
 try:
     for substr in strings:
         total += float(substr)
-    if len(strings) == 0:
+    if len(strings) != 0:
         print("The total is:", total)
     else:
         print('You didn\'t enter any numbers.')
