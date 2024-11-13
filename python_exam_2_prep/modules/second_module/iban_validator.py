@@ -16,6 +16,9 @@ else:
         if ch.isdigit():
             iban2 += ch
         else:
+            # in IBAN A is 10 all the way until Z which is 35
+            # rather than relying on a key-value dictionary,
+            # convert to the IBAN system from the capital letter's codepoint
             iban2 += str(10 + ord(ch) - ord('A'))
     iban = int(iban2)
     if iban % 97 == 1:
