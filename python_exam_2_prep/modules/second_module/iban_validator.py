@@ -21,6 +21,7 @@ else:
             # convert to the IBAN system from the capital letter's codepoint
             iban2 += str(10 + ord(ch) - ord('A'))
     iban = int(iban2)
+    print(f'Validated IBAN: {str(iban)}')
     if iban % 97 == 1:
         print("IBAN entered is valid.")
     else:
