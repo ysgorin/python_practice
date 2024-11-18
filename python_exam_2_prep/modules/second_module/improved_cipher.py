@@ -17,3 +17,33 @@
 # 2
 # Sample output: 
 # 'cdezabCDEzab 123'
+
+# Control variable
+txt_ctrl = False
+while txt_ctrl == False:
+    txt = input("Enter a line of text for encryption: ")
+    if txt == '':
+        print('You didn\'t enter any text for encryption.')
+    else:
+        txt_ctrl = True
+
+shift_val_ctrl  = False
+while shift_val_ctrl == False:
+    shift_val = input("Enter an encryption shift value between 1 and 25: ")
+    if not shift_val.isdigit():
+        print('You didn\'t enter an integer between 1 and 25.')
+    elif int(shift_val) < 1 or int(shift_val) > 25:
+        print('You didn\'t enter an integer between 1 and 25.')
+    else:
+        shift_val_ctrl = True
+
+# Cipher variable
+cipher = ''
+
+# Iterate through text
+for char in txt:
+    code = ord(char) + int(shift_val)
+    if not char.isalpha():
+        cipher += char
+    
+print('Cryptogram: ' + cipher)
