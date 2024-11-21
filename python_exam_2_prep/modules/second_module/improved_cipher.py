@@ -45,5 +45,16 @@ for char in txt:
     code = ord(char) + int(shift_val)
     if not char.isalpha():
         cipher += char
-    
+    elif char.islower():
+        if code <= ord('z'):
+            cipher += chr(code)
+        elif code > ord('z'):
+            code = (ord('a') + (int(shift_val) - (ord('z') - ord(char)))) - 1
+            cipher += chr(code)
+    elif char.isupper():
+        if code <= ord('Z'):
+            cipher += chr(code)
+        elif code > ord('Z'):
+            code = (ord('A') + (int(shift_val) -(ord('Z') - ord(char)))) - 1
+            cipher += chr(code)
 print('Cryptogram: ' + cipher)
