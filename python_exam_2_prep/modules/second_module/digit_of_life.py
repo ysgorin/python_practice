@@ -16,6 +16,34 @@
 
 from time import sleep
 
+def get_input(prompt, validate_func, error_message):
+    while True:
+        user_input = input(prompt)
+        if validate_func(user_input):
+            return user_input
+        else:
+            print(error_message)
+
+def validate_month(month):
+    if month.isdigit():
+        return 1 <= int(month) <= 12
+    else:
+        return False
+
+def validate_day(day):
+    if day.isdigt():
+        return
+    else:
+        return False
+        
+
+def validate_year(year):
+    if year.isdigit():
+        return
+    else:
+        return False
+
+
 print('*** The Digit of Life ***')
 sleep(1)
 while True:
