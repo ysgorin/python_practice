@@ -8,11 +8,6 @@
 # separate texts, checks whether the entered
 # texts are anagrams, and prints the result.
 
-# Note:
-# Assume that two empty strings are not anagrams
-# Treat upper- and lower-case letters as equal
-# Spaces are not taken into account during the check - treat them as non-existent
-
 # Test Data
 # Sample Input:
 #    'Listen'
@@ -31,8 +26,11 @@ from time import sleep
 
 def anagram_check(word_1, word_2):
     if len(word_1) != 0:
+        # Treat upper- and lower-case letters as equal
+        # Spaces are not taken into account during the check
         word_1, word_2 = word_1.replace(' ','').lower(), word_2.replace(' ','').lower()
         return sorted(list(word_1)) == sorted(list(word_2))
+    # Assume that two empty strings are not anagrams
     else:
         return False
     
