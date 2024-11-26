@@ -16,40 +16,25 @@
 
 from time import sleep
 
-def get_input(prompt, validate_func, error_message):
-    while True:
-        user_input = input(prompt)
-        if validate_func(user_input):
-            return user_input
-        else:
-            print(error_message)
-
-def validate_month(month):
-    if month.isdigit():
-        return 1 <= int(month) <= 12
-    else:
-        return False
-
-def validate_day(day):
-    if day.isdigt():
-        return
-    else:
-        return False
-        
-
-def validate_year(year):
-    if year.isdigit():
-        return
-    else:
-        return False
-
-
 print('*** The Digit of Life ***')
 sleep(1)
 while True:
     birthdate = input('Enter your birthdate (YYYYMMDD, YYYYDDMM, MMDDYYYY): ')
-    if birthdate.isdigit():
+    if birthdate.isdigit() and len(birthdate) == 8:
         break
     else:
-        print('Invalid input. Enter digits only. ')
+        print('Invalid input. Enter eight digits only. ')
         sleep(1)
+
+digit_of_life = birthdate
+
+while True:
+    sum = 0
+    for char in digit_of_life:
+        sum += int(char)
+    digit_of_life = str(sum)
+    if len(digit_of_life) > 1:
+        continue
+    else:
+        print(f'Your digit of life is: {str(sum)}.')
+        break
