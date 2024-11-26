@@ -25,3 +25,28 @@
 #    'norman'
 # Sample Output:
 #    'Not anagrams'
+
+# Dependencies
+from time import sleep
+
+def anagram_check(word_1, word_2):
+    if len(word_1) != 0:
+        word_1, word_2 = word_1.replace(' ','').lower(), word_2.replace(' ','').lower()
+        return sorted(list(word_1)) == sorted(list(word_2))
+    else:
+        return False
+    
+print('*** Anagram Test ***')
+sleep(1)
+
+while True:
+    word_1, word_2 = input('Enter the first text: '), input('Enter the second text: ')
+    if anagram_check(word_1,word_2):
+        print('Anagrams')
+    else:
+        print('Not anagrams')
+    
+    sleep(1)
+    cont = input('Test other words? (Enter \'y\' or \'n\') ')
+    if cont == 'n':
+        break
