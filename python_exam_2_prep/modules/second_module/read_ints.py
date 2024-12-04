@@ -1,6 +1,6 @@
 # read_ints.py
 
-# Write a function able to input intger values
+# Write a function able to input integer values
 # and to check if they are within a specified
 # range.
 
