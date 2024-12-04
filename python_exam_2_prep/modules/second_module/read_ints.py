@@ -4,6 +4,10 @@
 # and to check if they are within a specified
 # range.
 
+# Handle bad inputs using errors handling only
+# for purposes of becoming familiar with
+# exceptions.
+
 def read_int(prompt, min, max):
     while True:
         try:
