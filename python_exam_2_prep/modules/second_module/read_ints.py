@@ -8,13 +8,11 @@ def read_int(prompt, min, max):
     while True:
         try:
             v = int(input(prompt))
-            if min <= v <= max:
-                return v
-            else:
-                raise Exception
+            assert min <= v <= max
+            return v
         except ValueError:
             print('Error: wrong input')
-        except:
+        except AssertionError:
             print(f'Error: the value is not within the permitted range ({min}..{max})')
 
 v = read_int("Enter a number from -10 to 10: ", -10, 10)
