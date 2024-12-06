@@ -1,0 +1,1 @@
+# stack_object_approach.py
