@@ -9,4 +9,5 @@ class Stack:
 
 # Instantiate the object.
 stack_object = Stack()
+# Access property using dot notation
 print(len(stack_object.stack_list))
