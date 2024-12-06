@@ -4,7 +4,9 @@
 class Stack:
     # Define the constructor function.
     def __init__(self):
-        print('Hi!')
+        # Add a list property
+        self.stack_list = []
 
 # Instantiate the object.
 stack_object = Stack()
+print(len(stack_object.stack_list))
