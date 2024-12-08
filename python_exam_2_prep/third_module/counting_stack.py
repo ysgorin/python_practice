@@ -12,15 +12,6 @@
 # popped (we assume that counting pops is
 # enough).
 
-# Follow the hints:
-# o introduce a property designed to count pop
-# operations and name it in a way which
-# guarantees hiding it;
-# o initialize it to zero inside the constructor;
-# o provide a method which returns the value
-# currently assigned to the counter
-# (name it get_counter()).
-
 # Run it to check whether your code outputs 100.
 
 class Stack:
@@ -36,22 +27,30 @@ class Stack:
         return val
 
 
+# Define a counting subclass by pointing to the
+# Stack superclass.
 class CountingStack(Stack):
+    # Define CountingStack constructor
     def __init__(self):
-    #
-    # Fill the constructor with appropriate actions.
-    #
+        # Invoke the superclass's constructor
+        # explicitly
+        Stack.__init__(self)
+        # introduce a property designed to count
+        # pop operations and name it in a way
+        # which guarantees hiding it;
+        # initialize it to zero inside the
+        # constructor
+        self.__counter = 0
 
+    # provide a method which returns the value
+    # currently assigned to the counter
+    # (name it get_counter()).
     def get_counter(self):
-    #
-    # Present the counter's current value to the world.
-    #
+        return self.__counter
 
     def pop(self):
-    #
-    # Do pop and update the counter.
-    #
-	
+        Stack.pop(self)
+        self.__counter += 1
 
 stk = CountingStack()
 for i in range(100):
