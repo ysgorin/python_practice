@@ -25,10 +25,7 @@ class SuperQueue(Queue):
         Queue.__init__(self)
     
     def isempty(self):
-        if not self._Queue__queue_list:
-            return True
-        else:
-            return False
+        return not self._Queue__queue_list
 
 que = SuperQueue()
 que.put(1)
