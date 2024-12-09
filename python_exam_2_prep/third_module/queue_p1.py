@@ -30,7 +30,7 @@
 # False
 # Queue error
 
-class QueueError(Exception): # Choose base class for the new exception.
+class QueueError(IndexError): # Choose base class for the new exception.
     # No need to explicitly invoke the Exception
     # constructor unless adding custom attributes
     # or behavior to the exception. 
