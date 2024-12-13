@@ -1,30 +1,7 @@
 # timer_class.py
 
 # Scenario
-# We need a class able to count seconds. Easy?
-# Not as much as you may think as we're going to
-# have some specific expectations.
-
-# The class itself should provide the following
-# facilities:
-
-# objects of the class should be "printable",
-# i.e. they should be able to implicitly convert
-# themselves into strings of the following
-# form: "hh:mm:ss", with leading zeros added when
-# any of the values is less than 10;
-# the class should be equipped with parameterless
-# methods called next_second() and
-# previous_second(), incrementing the time stored
-# inside objects by +1/-1 second respectively.
-# Use the following hints:
-
-# all object's properties should be private;
-# consider writing a separate function
-# (not method!) to format the time string.
-# Complete the template we've provided in the
-# editor. Run your code and check whether the
-# output looks the same as ours.
+# We need a class able to count seconds. 
 
 # Expected output
 # 23:59:59
