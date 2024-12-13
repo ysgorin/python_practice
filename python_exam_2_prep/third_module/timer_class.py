@@ -5,22 +5,6 @@
 # Not as much as you may think as we're going to
 # have some specific expectations.
 
-# Read them carefully as the class you're about
-# write will be used to launch rockets carrying
-# international missions to Mars. It's a great
-# responsibility. We're counting on you!
-
-# Your class will be called Timer. Its
-# constructor accepts three arguments
-# representing hours (a value from range [0..23]
-# - we will be using the military time), minutes
-# (from range [0..59]) and seconds (from range
-# [0..59]).
-
-# Zero is the default value for all of the above
-# parameters. There is no need to perform any
-# validation checks.
-
 # The class itself should provide the following
 # facilities:
 
@@ -47,26 +31,41 @@
 # 00:00:00
 # 23:59:59
 
-class Timer:
-    def __init__( ??? ):
-        #
-        # Write code here
-        #
+class Timer: # The name of the class is Timer
+    # Its
+    # constructor accepts three arguments
+    # representing hours (a value from range [0..23]
+    # - we will be using the military time), minutes
+    # (from range [0..59]) and seconds (from range
+    # [0..59]).
+    # Zero is the default value for all of the above
+    # parameters. There is no need to perform any
+    # validation checks.
+    def __init__(self, hours=0, minutes=0, seconds=0):
+        self.__hours = hours
+        self.__minutes = minutes
+        self.__seconds = seconds
 
     def __str__(self):
-        #
-        # Write code here
-        #
+        return f"{self.__hours:02}:{self.__minutes:02}:{self.__seconds:02}"
 
     def next_second(self):
-        #
-        # Write code here
-        #
+        self.__seconds += 1
+        if self.__seconds == 60:
+            self.__seconds = 0
+            self.__minutes += 1
+            if self.__minutes == 60:
+                self.__minutes = 0
+                self.__hours = (self.__hours + 1) % 24
 
     def prev_second(self):
-        #
-        # Write code here
-        #
+        self.__seconds -= 1
+        if self.__seconds < 0:
+            self.__seconds = 59
+            self.__minutes -= 1
+            if self.__minutes < 0:
+                self.__minutes = 59
+                self.__hours = (self.__hours - 1) % 24
 
 timer = Timer(23, 59, 59)
 print(timer)
