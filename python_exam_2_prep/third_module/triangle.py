@@ -4,7 +4,7 @@ from point import Point
 
 class Triangle:
     def __init__(self, vertice1, vertice2, vertice3):
-        self.__points_list = [vertice1, vertice2, vertice3]
+        self.__vertices = [vertice1, vertice2, vertice3]
 
     def perimeter(self):
         return self.__points_list[0].distance_from_point(self.__points_list[1]) + self.__points_list[0].distance_from_point(self.__points_list[2]) + self.__points_list[1].distance_from_point(self.__points_list[2])
