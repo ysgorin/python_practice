@@ -1,6 +1,5 @@
 # triangle.py
 
-import math
 from point import Point
 
 class Triangle:
