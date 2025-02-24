@@ -22,7 +22,10 @@ try:
     while ch != '':
         # if it is a Latin character
         if 65 <= ord(ch) <= 90 or 97 <= ord(ch) <= 122:
-            histo_dict[ch.lower()] = 1
+            if ch.lower() in histo_dict:
+                histo_dict[ch.lower()] += 1
+            else:
+                histo_dict[ch.lower()] = 1
         ch = s.read(1)
     s.close()
 except IOError as e:
@@ -33,5 +36,6 @@ except:
 # prints a simple histogram in alphabetical
 # order (only non-zero counts should be
 # presented)
-for k, v in histo_dict.items():
-    print(k, '->', v)
+for k, v in sorted(histo_dict.items()):
+    if v > 0:
+        print(k, '->', v)
