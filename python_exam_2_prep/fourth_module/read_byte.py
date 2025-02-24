@@ -8,7 +8,10 @@ try:
     # bf.readinto(data)
 
     # Method 2
-    data = bytearray(bf.read())
+    # data = bytearray(bf.read())
+
+    # Method 3 - read() with arguments
+    data = bytearray(bf.read(5))
 
     bf.close()
 
