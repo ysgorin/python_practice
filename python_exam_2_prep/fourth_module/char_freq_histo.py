@@ -10,3 +10,8 @@
 # - prints a simple histogram in alphabetical
 # order (only non-zero counts should be
 # presented)
+
+# Expected output based on test_file.txt:
+# a -> 1
+# b -> 1
+# c -> 1
