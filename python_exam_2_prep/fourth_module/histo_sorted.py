@@ -33,9 +33,14 @@ except IOError as e:
 except:
     print('A non-I/O error occured')
 
-# prints a simple histogram in alphabetical
-# order (only non-zero counts should be
-# presented)
+# the output histogram should be sorted based on
+# the characters' frequency (the bigger counter
+# should be presented first)
 for k, v in sorted(histo_dict.items()):
     if v > 0:
         print(k, '->', v)
+
+# the histogram should be sent to a file with the
+# same name as the input one, but with the suffix
+# '.hist' (it should be concatenated to the
+# original name)
