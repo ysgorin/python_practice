@@ -33,14 +33,19 @@ except IOError as e:
 except:
     print('A non-I/O error occured')
 
-# the output histogram should be sorted based on
-# the characters' frequency (the bigger counter
-# should be presented first)
-for k, v in sorted(histo_dict.items()):
-    if v > 0:
-        print(k, '->', v)
-
-# the histogram should be sent to a file with the
-# same name as the input one, but with the suffix
-# '.hist' (it should be concatenated to the
-# original name)
+try:
+    # the histogram should be sent to a file with the
+    # same name as the input one, but with the suffix
+    # '.hist' (it should be concatenated to the
+    # original name)
+    w = open(file_name + '.hist', 'wt')
+    # sort based on the characters' frequency
+    # (the biggest counter should be presented first)
+    for k, v in sorted(histo_dict.items(), key=lambda item: item[1], reverse=True):
+        if v > 0:
+            w.write(f'{k} -> {v}\n')
+    w.close()
+except IOError as e:
+    print('I/O error occurred: ', strerror(e.errno))
+except:
+    print('A non-I/O error occured')
