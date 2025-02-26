@@ -1,6 +1,4 @@
-newtext.txt
-text.txt
-test_file2.txt
+*.txt
 
 *.bin
 
