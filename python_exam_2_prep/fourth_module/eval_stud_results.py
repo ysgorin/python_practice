@@ -46,7 +46,7 @@ try:
     line = file.readline()
     while line != '':
         lst = line.split()
-        if lst[0] + lst[1] in data_dict:
+        if lst[0] + ' ' + lst[1] in data_dict:
             data_dict[lst[0] + ' ' + lst[1]].append(float(lst[2]))
         else:
             data_dict[lst[0] + ' ' + lst[1]] = [float(lst[2])]
@@ -55,7 +55,6 @@ try:
 except IOError as e:
 	print("I/O error occurred: ", strerror(e.errno))
 
-print(data_dict)
 # read the file contents and count the sum of the
 # received points for each student
 
@@ -64,3 +63,8 @@ print(data_dict)
 # Andrew Cox 	 1.5
 # Anna Boleyn 	 15.5
 # John Smith 	 7.0
+
+for k, v in sorted(data_dict.items()):
+    print(k, end='')
+    print('\t', end='')
+    print(sum(v))
