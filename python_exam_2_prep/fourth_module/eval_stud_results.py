@@ -26,9 +26,36 @@
 # detected, and the third when the source file 
 # exists but is empty.
 
+from os import strerror
+
+class StudentsDataException(Exception):
+    pass
+
+class BadLine(StudentsDataException):
+    pass
+
+class FileEmpty(StudentsDataException):
+    pass
+
 # ask the user for the file name
 file_name = input('Enter file name: ')
+data_dict = {}
 
+try:
+    file = open(file_name, 'rt')
+    line = file.readline()
+    while line != '':
+        lst = line.split()
+        if lst[0] + lst[1] in data_dict:
+            data_dict[lst[0] + ' ' + lst[1]].append(float(lst[2]))
+        else:
+            data_dict[lst[0] + ' ' + lst[1]] = [float(lst[2])]
+        line = file.readline()
+    file.close()
+except IOError as e:
+	print("I/O error occurred: ", strerror(e.errno))
+
+print(data_dict)
 # read the file contents and count the sum of the
 # received points for each student
 
@@ -37,16 +64,3 @@ file_name = input('Enter file name: ')
 # Andrew Cox 	 1.5
 # Anna Boleyn 	 15.5
 # John Smith 	 7.0
-
-
-
-class StudentsDataException(Exception):
-    pass
-
-
-class BadLine(StudentsDataException):
-    # Write your code here.
-
-
-class FileEmpty(StudentsDataException):
-    # Write your code here.
