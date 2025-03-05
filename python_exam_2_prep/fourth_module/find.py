@@ -1,32 +1,42 @@
-# Write a function or method called find that 
-# takes two arguments called path and dir. The 
-# path argument should accept a relative or 
-# absolute path to a directory where the search 
-# should start, while the dir argument should be 
-# the name of a directory that you want to find 
-# in the given path. Your program should display 
-# the absolute paths if it finds a directory with
-# the given name.
-
-# The directory search should be done
-# recursively. This means that the search should 
-# also include all subdirectories in the given path.
-
 # Import os module
 import os
 
-def find(path, dir_name):
+# Write a function or method called find that
+# takes two arguments called path and dir.
+def find(path, dir):
     paths = [] # empty list to store results
 
+    # Use os.walk to generate file names in a
+    # directory tree
+    # This will include all subdirectories for a
+    # recursive search.
     for root, dirs, files in os.walk(path):
-        if dir_name in dirs:
-            paths.append(os.path.join(root , dir_name))
+        if dir in dirs:
+            # Join one or more path segments
+            # intelligently
+            # This will return absolute paths
+            paths.append(os.path.join(root, dir))
     
     if paths:
         for path in paths:
             print(path)
 
     else:
-        print(f'No directory named \'{dir_name}\' found in {path}.')
+        print(f'No directory named \'{dir}\' \
+found in {path}.')
 
-find(input('enter path: '), input('enter dir_name: '))
+# The path argument should accept a relative or 
+# absolute path to a directory where the search 
+# should start, while the dir argument should be 
+# the name of a directory that you want to find 
+# in the given path.
+find(input('Enter the relative or absolute path \
+where your search should start: '), \
+input('Enter the name of the \
+directory that you want to \
+find: '))
+
+
+# See documentation here:
+# https://docs.python.org/3/library/os.html
+# https://docs.python.org/3/library/os.path.html
